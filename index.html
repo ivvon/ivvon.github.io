@@ -16,48 +16,48 @@
 </style>
 </head>
 <body>
-        <div id = 'main'>
-            <h1>Онлайн магазин</h1>
-            <p>ladlaldladlallaldalaldald </p>
-            <button id="buy">Купить</button>
+    <div id = 'main'>
+        <h1>Онлайн магазин</h1>
+        <p>ladlaldladlallaldalaldald </p>
+        <button id="buy">Купить</button>
 
-        </div>
-        <from id="form">
-            <input type="text" placheholder ="Имя" id ="user_name">
-            <input type="text" placheholder ="Email" id ="user_email">
-            <input type="text" placheholder ="Телефон" id ="user_phone">
-            <button id="order">Оформить</button>
-        </from>
+    </div>
+    <from id="form">
+        <input type="text" placheholder ="Имя" id ="user_name">
+        <input type="text" placheholder ="Email" id ="user_email">
+        <input type="text" placheholder ="Телефон" id ="user_phone">
+        <button id="order">Оформить</button>
+    </from>
     
-        <script src="https://telegram.org/js/telegram-web-app.js"></script>
-        <script>
-            let tg =  window.Telegram.WebApp;
-            let buy = document.getElementById("buy")
-            let order = document.getElementById("order")
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script>
+        let tg =  window.Telegram.WebApp;
+        let buy = document.getElementById("buy")
+        let order = document.getElementById("order")
+        
+        tg.expand();
+        tg.close();
+        buy.addEventListener("click", () =>{
+            document.getElementById("main").style.display = "none";
+            document.getElementById("form").style.display = "block";
+            document.getElementById("user_name").value = tg.initDataUnsafe.user.frist_name;
             
-            tg.expand();
+        });
 
-            buy.addEventListener("click", () =>{
-                document.getElementById("main").style.display = "none";
-                document.getElementById("form").style.display = "block";
-                document.getElementById("user_name").value = tg.initDataUnsafe.user.frist_name;
-                
-            });
+            
+        order.addEventListener("click", () => {
+            
 
-                
-            order.addEventListener("click", () => {
-                
+            let data = {'name' : 'loh',
+                        'id' : tg.initDataUnsafe.user.id
+                }
 
-                let data = {'name' : 'loh',
-                            'id' : tg.initDataUnsafe.user.id
-                    }
-
-                tg.sendData(JSON.stringify(data));
-                tg.close();
-            });
+            tg.sendData(JSON.stringify(data));
+            tg.close();
+        });
 
 
-        </script> 
+    </script> 
     
 </body>
 </html>
