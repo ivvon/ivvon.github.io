@@ -49,7 +49,7 @@
                 text: 'Привет, бот! Это запрос через JavaScript.'
             };
 
-            axios.post('http://localhost:8080/webhook', dataAxios)
+            axios.post('http://192.168.1.100:8080/webhook', dataAxios)
                 .then(response => {
                     console.log('Успешно отправлено:', response.data);
                 })
