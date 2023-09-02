@@ -34,16 +34,25 @@
             let tg = window.Telegram.WebApp;
             let buy = document.getElementById("buy")
             let order = document.getElementById("order")
+            
+            tg.expand();
 
             buy.addEventListener("click", () =>{
                 document.getElementById("main").style.display = "none";
                 document.getElementById("form").style.display = "block";
-                document.getElementById("user_name").value = tg.initDataUnsafe.user.frist_name ;
+                document.getElementById("user_name").value = tg.initDataUnsafe.user.frist_name + " " + tg.initDataUnsafe.user.last_name;
                 
             });
 
-
+                
             order.addEventListener("click", () => {
+                
+
+                let data = {'name' : 'loh'
+
+                }
+
+                tg.sendData(JSON.stringify(data));
                 tg.close()
             });
 
