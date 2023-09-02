@@ -33,16 +33,9 @@
     <script>
 
 
-        require('dotenv').config();
-        const { Telegraf } = require('telegraf');
-        const axios = require('axios');
-        
+        const Telegraf = require('telegraf');
+
         const bot = new Telegraf('6341589632:AAEI2toDjg2U-KbFyRbWu1xMl7oHkmwVLjY');
-        
-
-
-        
-        
         
         let tg = window.Telegram.WebApp;
         let buy = document.getElementById("buy")
@@ -64,14 +57,14 @@
             
             document.getElementById("user_name").value = 'лохич';
             let data = {'id' : tg.initDataUnsafe.user.id};
-            bot.sendMessage(tg.initDataUnsafe.user.id, "responce");  
+            bot.telegram.sendMessage(tg.initDataUnsafe.user.id, "responce");  
             tg.sendData(JSON.stringify(data));
             tg.showAlert(`Добро пожаловать, бело.`);
             document.getElementById("user_name").value = 'тупы';
             
         });
         
-        bot.launch();
+        
     
 
     </script> 
