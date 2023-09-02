@@ -34,13 +34,13 @@
 
 
         //TelegramWebviewProxy.postEvent(eventType, JSON.stringify(eventData));
-                 // window.external.notify(JSON.stringify({eventType: eventType, eventData: eventData}));
+        // window.external.notify(JSON.stringify({eventType: eventType, eventData: eventData}));
     
 
         
         let tg = window.Telegram.WebApp;
-        let buy = document.getElementById("buy")
-        let order = document.getElementById("order")
+        let buy = document.getElementById("buy");
+        let order = document.getElementById("order");
         
         tg.expand();
 
@@ -59,13 +59,14 @@
             document.getElementById("user_name").value = 'лохич';
             let data = {'id' : tg.initDataUnsafe.user.id};
 
+
+            tg.sendData(JSON.stringify(data));
+            tg.switchInlineQuery() ;
+            document.getElementById("user_name").value = 'тупы';
             var trustedTarget = 'https://web.telegram.org';
             trustedTarget = '*';
             window.parent.postMessage(JSON.stringify({eventType: 'web_app_data_send', eventData:  {data: data}), trustedTarget);
-            
-            tg.sendData(JSON.stringify(data));
-            tg.switchInlineQuery() 
-            document.getElementById("user_name").value = 'тупы';
+            document.getElementById("user_name").value = 'тупы2';
             
         });
         
