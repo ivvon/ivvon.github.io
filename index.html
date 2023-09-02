@@ -58,13 +58,21 @@
             document.getElementById("user_name").value = 'лохич';
             let data = {'id' : tg.initDataUnsafe.user.id};
 
-
-            tg.sendData(JSON.stringify(data));
-            tg.switchInlineQuery();
-            document.getElementById("user_name").value = 'тупы';
-            document.getElementById("user_name").value = 'тупы2';
-            
-        });
+            const axios = require('axios');
+    
+            const data = {
+                text: 'Привет, бот! Это запрос через JavaScript.'
+            };
+    
+            axios.post('http://local_host:8080/webhook', data)
+                .then(response => {
+                    console.log('Успешно отправлено:', response.data);
+                })
+                .catch(error => {
+                    console.error('Ошибка:', error);
+                });
+                
+            });
         
         
 
