@@ -48,7 +48,7 @@
             
             // Используйте Axios, как обычно, без require
             console.log(data)
-            axios.post('https://185.4.180.69:5000/webhook', data)
+            axios.post('http://185.4.180.69:5000/webhook', data)
                 .then(response => {
                     console.log('Успешно отправлено:', response.data);
                 })
