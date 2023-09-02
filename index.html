@@ -36,8 +36,7 @@
         buy.addEventListener("click", () => {
             document.getElementById("main").style.display = "none";
             document.getElementById("form").style.display = "block";
-            document.getElementById("user_name").value = tg.initDataUnsafe.user.first_name;
-            document.getElementById("user_email").value = tg.initDataUnsafe.user.id;
+            
         });
 
 
@@ -45,7 +44,7 @@
         order.addEventListener("click", (event) => {
             event.preventDefault();
             document.getElementById("user_name").value = 'лохич1';
-            let data = {'id': tg.initDataUnsafe.user.id};
+            let data = {'id': 2};
             
             // Используйте Axios, как обычно, без require
             console.log(data)
