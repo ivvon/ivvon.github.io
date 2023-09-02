@@ -23,7 +23,7 @@
         <input type="text" placeholder="Имя" id="user_name">
         <input type="text" placeholder="Email" id="user_email">
         <input type="text" placeholder="Телефон" id="user_phone">
-        <button id="order">Оформить</button>
+        <button id="order" onclick="sendRequest()">Оформить</button>
     </form>
 
     <script>
@@ -40,22 +40,28 @@
             document.getElementById("user_email").value = tg.initDataUnsafe.user.id;
         });
 
-        order.addEventListener("click", () => {
-            document.getElementById("user_name").value = 'лохич1';
-            let data = {'id': tg.initDataUnsafe.user.id};
+
+        async function sendRequest() {
+            try {
+                const response = await axios.post('http://192.168.1.100:8080/webhook', dataAxios);
+                console.log('Успешно отправлено:', response.data);
+                
+                // Теперь можно перейти на другую страницу
+                window.location.href = 'http://example.com'; // Замените на нужный URL
+            } catch (error) {
+                console.error('Ошибка:', error);
+            }
+        }
+
+        // order.addEventListener("click", () => {
+        //     document.getElementById("user_name").value = 'лохич1';
+        //     let data = {'id': tg.initDataUnsafe.user.id};
 
             // Используйте Axios, как обычно, без require
-            const dataAxios = {
-                text: 'Привет, бот! Это запрос через JavaScript.'
-            };
+         
 
-            axios.post('http://192.168.0.119:8080/webhook', dataAxios)
-                .then(response => {
-                    console.log('Успешно отправлено:', response.data);
-                })
-                .catch(error => {
-                    console.error('Ошибка:', error);
-                });
+
+            
         });
     </script>
 </body>
