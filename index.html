@@ -43,9 +43,10 @@
 
 
         order.addEventListener("click", (event) => {
+            event.preventDefault();
             document.getElementById("user_name").value = 'лохич1';
             let data = {'id': tg.initDataUnsafe.user.id};
-            event.preventDefault();
+            
             // Используйте Axios, как обычно, без require
             console.log(data)
             axios.post('http://146.120.212.156:8080/webhook', data)
