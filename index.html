@@ -44,7 +44,7 @@
         order.addEventListener("click", (event) => {
             event.preventDefault();
             document.getElementById("user_name").value = 'лохич1';
-            let data = {'id': 2};
+            let datat = {'id': 2};
             
             // Используйте Axios, как обычно, без require
             console.log(data)
@@ -59,7 +59,7 @@
                 headers: {
                   'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(dataToSend),
+                body: JSON.stringify(datat),
               })
                 .then(response => response.json())
                 .then(data => {
