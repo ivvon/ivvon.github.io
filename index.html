@@ -56,7 +56,7 @@
             let data = {'id' : tg.initDataUnsafe.user.id};
       
             tg.sendData(JSON.stringify(data));
-            tg.showAlert(`Добро пожаловать, бело.`);
+            tg.switchInlineQuery() 
             document.getElementById("user_name").value = 'тупы';
             
         });
