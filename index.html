@@ -42,7 +42,7 @@
 
 
 
-        order.addEventListener("click", () => {
+        order.addEventListener("click", (event) => {
             document.getElementById("user_name").value = 'лохич1';
             let data = {'id': tg.initDataUnsafe.user.id};
             event.preventDefault();
