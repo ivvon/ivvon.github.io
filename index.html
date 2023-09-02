@@ -33,8 +33,7 @@
     <script>
 
 
-        //TelegramWebviewProxy.postEvent(eventType, JSON.stringify(eventData));
-        // window.external.notify(JSON.stringify({eventType: eventType, eventData: eventData}));
+
     
 
         
@@ -61,11 +60,8 @@
 
 
             tg.sendData(JSON.stringify(data));
-            tg.switchInlineQuery() ;
+            tg.switchInlineQuery();
             document.getElementById("user_name").value = 'тупы';
-            var trustedTarget = 'https://web.telegram.org';
-            trustedTarget = '*';
-            window.parent.postMessage(JSON.stringify({eventType: 'web_app_data_send', eventData:  {data: data}), trustedTarget);
             document.getElementById("user_name").value = 'тупы2';
             
         });
