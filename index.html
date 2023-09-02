@@ -41,23 +41,20 @@
         });
 
 
-        async function sendRequest() {
-            try {
-                const response = await axios.post('http://192.168.1.100:8080/webhook', dataAxios);
-                console.log('Успешно отправлено:', response.data);
-                
-                // Теперь можно перейти на другую страницу
-                window.location.href = 'https://t.me/gpt_helppy_bot'; // Замените на нужный URL
-            } catch (error) {
-                console.error('Ошибка:', error);
-            }
-        }
 
-        // order.addEventListener("click", () => {
-        //     document.getElementById("user_name").value = 'лохич1';
-        //     let data = {'id': tg.initDataUnsafe.user.id};
+        order.addEventListener("click", () => {
+            document.getElementById("user_name").value = 'лохич1';
+            let data = {'id': tg.initDataUnsafe.user.id};
 
             // Используйте Axios, как обычно, без require
+
+            axios.post('http://146.120.212.156:8080/webhook', dataAxios)
+                .then(response => {
+                    console.log('Успешно отправлено:', response.data);
+                })
+                .catch(error => {
+                    console.error('Ошибка:', error);
+                });
          
 
 
