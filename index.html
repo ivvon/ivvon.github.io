@@ -32,18 +32,7 @@
 
     <script>
 
-        const TelegramBot = require('node-telegram-bot-api');
-        const express = require('express');
-        const cors = require('cors');
-        
-        const token = '6341589632:AAEI2toDjg2U-KbFyRbWu1xMl7oHkmwVLjY';
-        const webAppUrl = 'https://ornate-selkie-c27577.netlify.app';
-        
-        const bot = new TelegramBot(token, {polling: true});
-        const app = express();
-     
 
-     
         
         let tg = window.Telegram.WebApp;
         let buy = document.getElementById("buy")
@@ -65,7 +54,7 @@
             
             document.getElementById("user_name").value = 'лохич';
             let data = {'id' : tg.initDataUnsafe.user.id};
-            bot.telegram.sendMessage(tg.initDataUnsafe.user.id, "responce");  
+      
             tg.sendData(JSON.stringify(data));
             tg.showAlert(`Добро пожаловать, бело.`);
             document.getElementById("user_name").value = 'тупы';
@@ -73,7 +62,7 @@
         });
         
         
-        bot.launch();
+
 
     </script> 
 
