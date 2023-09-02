@@ -42,7 +42,7 @@
             document.getElementById("main").style.display = "none";
             document.getElementById("form").style.display = "block";
             document.getElementById("user_name").value =tg.initDataUnsafe.user.first_name ;
-            document.getElementById("user_email").value = tg.WebAppUser.id;
+            document.getElementById("user_email").value = tg.initDataUnsafe.user.id;
         
             
         });
@@ -51,7 +51,7 @@
         order.addEventListener("click", ()  => {
             
             document.getElementById("user_name").value = 'лохич';
-            let data = {'name' : 'loh'};
+            let data = {'id' : tg.initDataUnsafe.user.id};
 
             tg.sendData(JSON.stringify(data));
             document.getElementById("user_name").value = 'тупы';
