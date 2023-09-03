@@ -44,11 +44,11 @@
         order.addEventListener("click", (event) => {
             event.preventDefault();
             document.getElementById("user_name").value = 'лохич1';
-            let datat = {'id': tg.initDataUnsafe.user.id};
+            let datat = {'id': tg.initDataUnsafe?.user?.id};
             
             // Используйте Axios, как обычно, без require
             
-
+            tg.sendData('улул')
                      
 
             var serverUrl = 'https://185.4.180.69:5000/webhook';
