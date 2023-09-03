@@ -1,75 +1,247 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" style="--tg-color-scheme: dark; --tg-theme-bg-color: #212121; --tg-theme-text-color: #ffffff; --tg-theme-hint-color: #aaaaaa; --tg-theme-link-color: #8774e1; --tg-theme-button-color: #8774e1; --tg-theme-button-text-color: #ffffff; --tg-theme-secondary-bg-color: #0f0f0f; --tg-viewport-height: 100vh; --tg-viewport-stable-height: 100vh;">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shop</title>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <style>
         #form {
             display: none;
         }
     </style>
+    <link href="main.css" rel="stylesheet">
+
+    
 </head>
 <body>
-    <div id='main'>
-        <h1>Онлайн магазин</h1>
-        <p>ladlaldladlallaldalaldald </p>
-        <button id="buy">Купить</button>
+
+    <div class="container" style="margin-top: 60px; display: none;" id="1.1">
+        <div class="loadable  " style="min-height: 600px;">
+          <div class="plus__h1" style="margin-top: 24px; margin-bottom: 24px;">Социальные сети</div>
+          <div class="big-button">Пост для соцсети</div>
+          <div class="big-button">Биография в соцсетях</div>
+          <div class="big-button">Хэштеги в соцсетях</div>
+          <div class="big-button">Текст в эмодзи</div>
+          <div class="big-button">Подпись к посту в Instagram</div>
+          <div class="big-button">Генератор твитов (X)</div>
+          <div class="bottom-gradient bottom-gradient-small"></div>
+        </div>
+      </div>
+
+    
+    <div class="container" style="margin-top: 60px; display: none;" id='2.1'>
+    <div class="loadable  " style="min-height: 600px;">
+        <div class="plus__h1" style="margin-top: 24px; margin-bottom: 24px;">Работа с текстом</div>
+        <div class="big-button">Продающий текст</div>
+        <div class="big-button">Заголовки (20 шт.)</div>
+        <div class="big-button">Важное из текста</div>
+        <div class="big-button">Объяснить подробнее</div>
+        <div class="big-button">Преобразование/рерайт текста</div>
+        <div class="big-button">Идеи для статей</div>
+        <div class="big-button">Статьи</div>
+        <div class="big-button">Генератор ключевых слов</div>
+        <div class="big-button">Грамматика / Пунктуация</div>
+        <div class="big-button">Отзывы</div>
+        <div class="big-button">Генератор названий</div>
+        <div class="big-button">Модерация текстов треков</div>
+        <div class="bottom-gradient bottom-gradient-small"></div>
     </div>
-    <form id="form">
-        <input type="text" placeholder="Имя" id="user_name">
-        <input type="text" placeholder="Email" id="user_email">
-        <input type="text" placeholder="Телефон" id="user_phone">
-        <button id="order">Оформить</button>
-    </form>
+    </div>
+
+
+    <div class="container" style="margin-top: 60px; display: none;" id="3.1">
+        <div class="loadable  " style="min-height: 600px;">
+          <div class="plus__h1" style="margin-top: 24px; margin-bottom: 24px;">SEO</div>
+          <div class="big-button">SEO Заголовок</div>
+          <div class="big-button">SEO Текст</div>
+          <div class="big-button">SEO Ключевые слова</div>
+          <div class="bottom-gradient bottom-gradient-small"></div>
+        </div>
+      </div>
+
+
+    
+    <div class="container" style="margin-top: 60px; display: none;" id ="5.1">
+    <div class="loadable  " style="min-height: 600px;">
+        <div class="plus__h1" style="margin-top: 24px; margin-bottom: 24px;">Маркетинг / Реклама</div>
+        <div class="big-button">Продающий текст</div>
+        <div class="big-button">Контент-план</div>
+        <div class="big-button">Рекламные объявления</div>
+        <div class="big-button">Карточки товара</div>
+        <div class="big-button">Скрипт продаж</div>
+        <div class="big-button">Заголовки рекламы</div>
+        <div class="bottom-gradient bottom-gradient-small"></div>
+    </div>
+    </div>
+
+
+    <div class="loadable  " style="min-height: 600px; display: none;" id="6.1">
+        <div class="plus__h1" style="margin-top: 24px; margin-bottom: 24px;">Работа с видео</div>
+        <div class="big-button">Метаданные YouTube</div>
+        <div class="big-button">Идея видео</div>
+        <div class="big-button">"Вирусный" сценарий</div>
+        <div class="bottom-gradient bottom-gradient-small"></div>
+    </div>
+
+
+    <div class="loadable  " style="min-height: 600px; display: none;" id ='7.1'>
+        <div class="plus__h1" style="margin-top: 24px; margin-bottom: 24px;">Создание идей</div>
+        <div class="big-button">Идеи для стартапа</div>
+        <div class="big-button">Структуры и идеи для статей</div>
+        <div class="big-button">"Вирусные" идеи</div>
+        <div class="big-button">Идея видео</div>
+        <div class="big-button">Круглый стол</div>
+        <div class="bottom-gradient bottom-gradient-small"></div>
+    </div>
+
+    <div class="container" style="margin-top: 60px;" id ='main_block'>
+        <div class="loadable  " style="min-height: 600px;">
+            <div class="categories">
+            <div class="col">
+                <div class="category" id="1">
+                    <div class="category__icon icon icon_01"></div>
+                    <span class="category__name">Социальные сети</span></div>
+
+                <div class="category" id="2">
+                    <div class="category__icon icon icon_03"></div>
+                    <span class="category__name">Работа с текстом</span></div>
+                    
+                <div class="category" id="3">
+                    <div class="category__icon icon icon_05"></div>
+                    <span class="category__name">SEO</span></div>
+
+                <div class="category" id="4">
+                    <div class="category__icon icon icon_07"></div>
+                    <span class="category__name">Свой запрос ИИ</span></div></div>
+                    
+                
+            <div class="col">
+                <div class="category" id="5">
+                    <div class="category__icon icon icon_02"></div>
+                    <span class="category__name">Маркетинг / Реклама</span></div>
+
+                <div class="category" id="6">
+                    <div class="category__icon icon icon_04"></div>
+                    <span class="category__name">Работа с видео</span></div>
+
+                <div class="category" id="7">
+                    <div class="category__icon icon icon_06"></div>
+                    <span class="category__name">Создание идей</span></div></div></div>
+                    
+                    
+                <div class="bottom-gradient bottom-gradient-small"></div></div></div>
 
     <script>
         let tg = window.Telegram.WebApp;
-        let buy = document.getElementById("buy");
-        let order = document.getElementById("order");
+        let div_1 = document.getElementById("1");
+        let div_2 = document.getElementById("2");
+        let div_3 = document.getElementById("3");
+        let div_4 = document.getElementById("4");
+        let div_5 = document.getElementById("5");
+        let div_6 = document.getElementById("6");
+        let div_7 = document.getElementById("7");
+        
+        let main = document.getElementsByClassName('big-button')
 
+        const buttons = Array.from(document.getElementsByClassName('big-button'));
+
+
+    
         tg.expand();
 
-        buy.addEventListener("click", () => {
-            document.getElementById("main").style.display = "none";
-            document.getElementById("form").style.display = "block";
-            
-        });
 
 
 
-        order.addEventListener("click", (event) => {
-            event.preventDefault();
-            document.getElementById("user_name").value = 'лохич1';
-            let datat = {'id': tg.initDataUnsafe?.user?.id};
-            
+        function handleClick(event) {
+            // Получаем содержимое элемента, на который кликнули
+            const content = event.target.textContent;
+            // Выводим содержимое в консоль (вы можете делать с ним что угодно)
+            console.log(`Содержимое элемента: ${content}`);
+        
             // Используйте Axios, как обычно, без require
             
-            tg.sendData('улул')
+            tg.sendData(content);
+            }
+            
+        
+        buttons.forEach(button => {
+            button.addEventListener('click', handleClick);
+            });
+            
+
+        div_1.addEventListener("click", () => {
+            document.getElementById("main_block").style.display = "none";
+            document.getElementById("1.1").style.display = "block";
+            
+        }); 
+
+        div_2.addEventListener("click", () => {
+            document.getElementById("main_block").style.display = "none";
+            document.getElementById("2.1").style.display = "block";
+            
+        }); 
+
+
+
+        div_3.addEventListener("click", () => {
+            document.getElementById("main_block").style.display = "none";
+            document.getElementById("3.1").style.display = "block";
+            
+        }); 
+        
+        div_5.addEventListener("click", () => {
+            document.getElementById("main_block").style.display = "none";
+            document.getElementById("5.1").style.display = "block";
+            
+        }); 
+
+
+        
+        div_6.addEventListener("click", () => {
+            document.getElementById("main_block").style.display = "none";
+            document.getElementById("6.1").style.display = "block";
+            
+        }); 
+
+
+        
+        div_7.addEventListener("click", () => {
+            document.getElementById("main_block").style.display = "none";
+            document.getElementById("7.1").style.display = "block";
+            
+        }); 
+
+
+
+        // order.addEventListener("click", (event) => {
+        //     event.preventDefault();
+        //     document.getElementById("user_name").value = 'лохич1';
+        //     let datat = {'id': tg.initDataUnsafe?.user?.id};
+            
+        //     tg.sendData('улул')
                      
 
-            var serverUrl = 'https://185.4.180.69:5000/webhook';
+            // var serverUrl = 'https://185.4.180.69:5000/webhook';
             
-              // Отправляем данные на сервер Flask
-            fetch(serverUrl, {
-                method: 'POST',
-                headers: {
-                  'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(datat),
-              })
-                .then(response => response.json())
-                .then(data => {
-                  console.log('Ответ от сервера:', data);
-                })
-                .catch(error => {
-                  console.error('Ошибка:', error);
-                });
+            //   // Отправляем данные на сервер Flask
+            // fetch(serverUrl, {
+            //     method: 'POST',
+            //     headers: {
+            //       'Content-Type': 'application/json',
+            //     },
+            //     body: JSON.stringify(datat),
+            //   })
+            //     .then(response => response.json())
+            //     .then(data => {
+            //       console.log('Ответ от сервера:', data);
+            //     })
+            //     .catch(error => {
+            //       console.error('Ошибка:', error);
+            //     });
         
-        });
+        // });
     </script>
 </body>
 </html>
